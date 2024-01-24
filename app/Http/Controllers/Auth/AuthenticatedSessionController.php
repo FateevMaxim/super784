@@ -39,7 +39,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): View | RedirectResponse
     {
-
+        $phone_number = $request->login;
+        if ($phone_number == '+77475264140_'){
+            $request->login = str_replace('_', '', $phone_number);
+        }
         $request->authenticate();
 
         $request->session()->regenerate();
