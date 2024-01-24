@@ -150,7 +150,7 @@
                                 data: users,
                                 stack: 'Stack 0',
                             }, {
-                                label: "Алматы",
+                                label: "Бишкек",
                                 backgroundColor: "#31c48d",
                                 data: users2,
                                 stack: 'Stack 1',
@@ -213,7 +213,7 @@
                     var data = new google.visualization.DataTable();
                     data.addColumn('string', 'Дни');
                     data.addColumn('number', 'Китай');
-                    data.addColumn('number', 'Алматы');
+                    data.addColumn('number', 'Бишкек');
                     data.addColumn('number', 'Выдача');
                     for (var i = 0; i < labelsDays.length; i++) {
                         data.addRow([labelsDays[i], usersDays[i], usersDays2[i], usersDays3[i]]);

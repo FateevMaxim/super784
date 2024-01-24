@@ -15,7 +15,7 @@
             <div class="grid grid-cols-1 max-w-3xl mx-auto md:grid-cols-2 h-22 pl-6 pr-6 pb-4">
                 <div class="min_height round_border p-4 relative">
                     <div>
-                        <h3 class="mt-0 p-4 text-2xl font-medium leading-tight text-primary">Пункт выдачи Алматы</h3>
+                        <h3 class="mt-0 p-4 text-2xl font-medium leading-tight text-primary">Пункт выдачи Бишкек</h3>
                     </div>
                     <form method="POST" action="{{ route('getinfo-product') }}" id="getInfoForm">
                         <div class="w-full">
@@ -50,7 +50,7 @@
 
                             <h4 class="mt-4">Дата регистрации в Китае</h4>
                             <p><small id="to_china"></small></p>
-                            <h4>Дата регистрации в Алматы</h4>
+                            <h4>Дата регистрации в Бишкеке</h4>
                             <p><small id="to_almaty"></small></p>
                             <h4 id="toClientDiv">Дата выдачи клиенту</h4>
                             <div id="toCityDiv" style="display: none;">
@@ -68,7 +68,7 @@
                             @csrf
 
                             <select id="citySelect" name="city" class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" required>
-                                <option value="Алматы" selected>Алматы</option>
+                                <option value="Бишкек" selected>Бишкек</option>
                                 @foreach($cities as $city)
                                     <option value="{{ $city->title }}">{{ $city->title }}</option>
                                 @endforeach
@@ -172,7 +172,7 @@
                             $("#giveToClient").prop("disabled",true).css("cursor","not-allowed");
                         }
 
-                        if (city === 'Алматы'){
+                        if (city === 'Бишкек'){
                             $("#clear").prop("disabled",true).css("cursor","not-allowed");
                         }
                     });
@@ -191,7 +191,7 @@
                     $("#citySelect").change(function(event) {
 
                         city = $("#citySelect").val();
-                        if (city === 'Алматы'){
+                        if (city === 'Бишкек'){
                             $("#clear").prop("disabled",true).css("cursor","not-allowed");
                         }else{
                             $("#clear").prop("disabled",false).css("cursor","pointer");

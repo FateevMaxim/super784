@@ -37,7 +37,6 @@ class RegisteredUserController extends Controller
             'checkbox' => ['required'],
             'surname' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
-            'code' => ['required', 'string', 'max:255'],
             'login' => ['required', 'string', 'max:16', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -46,10 +45,6 @@ class RegisteredUserController extends Controller
             return redirect()->back()->with('error', 'Неверный номер, пожалуйста, перепроверьте');
         }
 
-        $issetCode = User::query()->where('code', $request->code)->exists();
-        if ($issetCode){
-            return redirect()->back()->with('error', 'Данный код уже зарегистрирован!');
-        }
 
         $user = User::create([
             'name' => $request->name,
